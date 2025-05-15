@@ -1,0 +1,17 @@
+<h2>HELLO</h2>
+<p appHoverBackground="lightgreen">
+    Hover over this paragraph to see the background change!
+</p>
+
+<div [appHoverBackground]="'red'">
+    Red background on hover.
+</div>
+
+<p>{{ 'hello world from angular' | textFormat:'title' }}</p>
+<!-- Output: Hello World From Angular -->
+
+<p>{{ 'Angular Pipe Example' | textFormat:'reverse' }}</p>
+<!-- Output: elpmaxE epiP ralugnA -->
+
+<!-- <app-parent></app-parent> -->
+<router-outlet />

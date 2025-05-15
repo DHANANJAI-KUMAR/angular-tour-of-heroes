@@ -1,0 +1,9 @@
+<h3>Child Component</h3>
+<p>Message from Parent: {{ message }}</p>
+<button (click)="sendMessageToParent()">Send Message to Parent</button>
+
+<div>
+    <input id="name" [(ngModel)]="name" placeholder="Your name here" />
+    <p>Hello, {{ name }}!</p>
+    
+</div>

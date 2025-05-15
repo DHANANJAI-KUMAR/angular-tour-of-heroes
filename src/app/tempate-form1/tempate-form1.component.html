@@ -1,0 +1,31 @@
+<p>tempate-form1 works!</p>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" novalidate>
+
+    <h1>{{userForm.errors | json }}</h1>
+
+    <div>
+      <label>Name:</label>
+      <input name="name" [(ngModel)]="user.name" required minlength="3" #name="ngModel" />
+      <div *ngIf="name.invalid && name.touched">
+        <small *ngIf="name.errors?.['required']">Name is required.</small>
+        <small *ngIf="name.errors?.['minlength']">
+          Name must be at least 3 characters.
+        </small>
+      </div>
+    </div>
+  
+    <!-- Email -->
+    <div>
+      <label>Email:</label>
+      <input type="email" name="email" [(ngModel)]="user.email" required email #email="ngModel" />
+      <div *ngIf="email.invalid && email.touched">
+        <small *ngIf="email.errors?.['required']">Email is required.</small>
+        <small *ngIf="email.errors?.['email']">Enter a valid email.</small>
+      </div>
+    </div>
+      
+  
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+  </form>
+  
